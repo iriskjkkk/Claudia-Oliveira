@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Claudia Oliveira Hair</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --bg: #080707;
+  --card: #0f0f0f;
+  --gold: #c9a84a;
+  --muted: #e9e6e0;
+  --glass: rgba(255, 255, 255, 0.03);
+  --radius: 14px;
+  --max: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Montserrat, system-ui, Arial;
+  color: var(--muted);
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--max);
+  margin: 32px auto;
+  padding: 0 18px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), #b08f2f);
+  display: grid;
+  place-items: center;
+  color: #080808;
+  font-weight: 800;
+}
+
+.brand h1 {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  font-size: 18px;
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+nav a {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.cta {
+  background: var(--gold);
+  color: #070707;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: center;
+  margin: 28px 0;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 36px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  margin: 0 0 12px 0;
+  font-size: 30px;
+}
+
+.lead {
+  color: #d3d0c8;
+  margin-bottom: 18px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--gold);
+  color: #070707;
+  border: none;
+}
+
+/* STYLIST BLOCK */
+.stylist {
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.stylist img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.stylist .meta {
+  padding: 16px;
+}
+
+.stylist .meta .name {
+  font-weight: 700;
+}
+
+.stylist .meta .role {
+  color: #d3d0c8;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* HIGHLIGHTS */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: var(--glass);
+  font-weight: 600;
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 600px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.card h3 {
+  margin: 8px 0;
+}
+
+.card p {
+  margin: 0;
+  color: #bfb9aa;
+}
+
+/* TREATMENTS */
+.treatments ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.treatments li {
+  background: var(--glass);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* GALLERY */
+/* Estilo da galeria */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Modal da imagem */
+#imageModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  place-items: center;
+  z-index: 20000;
+}
+
+#imageModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,.5);
+  animation: zoomIn .25s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(.7); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+
+/* COURSES */
+.courses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.course {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ABOUT */
+.about {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.about p {
+  color: #d3d0c8;
+  line-height: 1.6;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 12px;
+  font-size: 1.3em;
+  color: #bbb;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--gold); /* combina com sua paleta */
+  transform: scale(1.2);
+}
+
+
+/* ANAMNESE */
+.anamnese {
+  position: relative;
+  top: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.anamnese h4 {
+  margin: 0 0 8px 0;
+}
+
+.input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/*Mapa*/
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 45%; /* proporção do mapa (45% = 16:9 aproximado) */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+/*fim do mapa*/
+
+/* FOOTER */
+footer {
+  margin-top: 36px;
+  padding: 18px 0;
+  text-align: center;
+  color: #a9a29a;
+}
+
+
+/* ANIMATIONS */
+.fade {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 600px) {
+  .stylist img {
+    height: 160px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="fade">
+      <div class="brand">
+        <div class="logo">A</div>
+        <div>
+          <h1>Claudia Oliveira</h1>
+          
+        </div>
+      </div>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Galeria</a>
+       <!-- <a class="cta" href="#anamnese">Agendar Anamnese</a> -->
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero fade">
+        <div class="hero-card">
+          <div class="eyebrow">Experiência & Sofisticação</div>
+          <h2>Transformação que começa na saúde do fio</h2>
+          <p class="lead">Atendimentos personalizados com foco em resultado e bem-estar. Do diagnóstico à manutenção — técnicas seguras e modernas.</p>
+          <div class="actions">
+            <!--<button class="btn primary" onclick="document.getElementById('anamnese').scrollIntoView({behavior:'smooth'})">Agendar Anamnese</button>
+            <button class="btn" onclick="document.getElementById('galeria').scrollIntoView({behavior:'smooth'})">Ver Galeria</button> -->
+            <button class="btn primary">
+              <a href="#mapa">Localização</a>
+            </button>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
+            <!-- <div class="chip">Local: Centro</div> -->
+            <div style="margin-left:auto;color:#a9a29a">Aberto: Seg–Sex • 9h–18h</div>
+          </div>
+        </div>
+
+        <aside class="stylist fade">
+          <img src="IMG/claudia.jpeg" alt="Claudia Oliveira">
+          <div class="meta">
+            <div class="name">Claudia Oliveira</div>
+            <div class="role">terapeuta capilar • cabeleireira • tricologista</div>
+            <p style="margin-top:8px;color:#cfc7bf;font-size:13px">Mais de 16 anos de experiência. Ensino técnicas com foco em saúde capilar e resultado.</p>
+          </div>
+        </aside>
+      </section>
+
+      <div class="grid">
+        <div>
+          <section class="fade" id="servicos">
+            <h2>Aqui você encontrará:</h2>
+            <div class="highlights">
+              <div class="chip">Atendimento humanizado</div>
+              <div class="chip">Especialização e metodologia própria</div>
+            </div>
+          </section>
+
+          <section class="fade services"  style="margin-top:18px">
+            <div class="card" onclick="openService('Corte Personalizado')">
+              <h3>Corte Personalizado</h3>
+              <p>Técnica que valoriza o formato e estilo.</p>
+            </div>
+            <div class="card" onclick="openService('Coloração & Mechas')">
+              <h3>Coloração & Mechas</h3>
+              <p>Mechas seguras, correções e tonalizações personalizadas.</p>
+            </div>
+            <div class="card" onclick="openService('Terapia Capilar')">
+              <h3>Terapia Capilar</h3>
+              <p>Tratamentos, protocolos de reconstrução, hidratação e fortalecimento.</p>
+            </div>
+            <div class="card" onclick="openService('Acabamento & Escova')">
+              <h3>Alinhamentos Térmico & Escova</h3>
+              <p>Finalizações que realçam o corte e preservam a saúde dos fios.</p>
+            </div>
+          </section>
+
+          <section class="fade treatments" style="margin-top:18px">
+            <h2>Tratamentos</h2>
+            <ul>
+              <li>Alopecia</li>
+              <li>Oleosidade</li>
+              <li>Dermatite</li>
+              <li>Psoríase</li>
+            </ul>
+          </section>
+
+          <section class="fade" id="galeria" style="margin-top:18px">
+            <h2>Atendimento</h2>
+            <div class="gallery">
+              <img src="IMG/loiro.png" alt="Mechas Loira">
+              <img src="IMG/alinhamento.png" alt="Alinhamento Térmico">
+              <img src="IMG/tratamento.jpeg" alt="Tratamento">
+            </div>
+            <div style="margin-top:12px">
+             <button class="btn" onclick="window.open('https://www.instagram.com/claudiaoliveiraterapeutacapila/', '_blank')">
+               Confira outros atendimentos
+             </button>
+            </div>
+
+<script>
+function openImageModal(src) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImg');
+
+  modalImg.src = src;
+  modal.style.display = 'grid';
+}
+
+// Fechar ao clicar fora
+function closeImageModal(e) {
+  if (e.target.id === "imageModal") {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+}
+</script>
+
+          </section>
+
+          <section class="fade courses" style="margin-top:18px">
+            <h2>Cursos</h2>
+            <div class="course">Curso: Terapias capilares iniciante <span style="opacity:.8"> <!--• 8h --></span></div>
+            <div class="course">Curso: Terapias capilares avançado<span style="opacity:.8"><!--• 8h --></span></div>
+          </section>
+        </div>
+
+        <aside>
+          <div class="anamnese fade" id="anamnese">
+            <h4>Agendar Anamnese</h4>
+            <p style="margin:6px 0 12px 0;color:#cfc7bf">Agende uma avaliação completa: diagnóstico, histórico e plano de tratamento.</p>
+            <form onsubmit="return submitAnamnese(event)">
+              <input class="input" type="text" id="nome" placeholder="Seu nome" required>
+              <input class="input" type="tel" id="whatsapp" placeholder="WhatsApp" required>
+              <label style="font-size:13px;color:#bdb4aa;margin-bottom:6px">Serviço desejado</label>
+              <select class="input" id="servico" style="background-color: #070707;">
+                <option>Corte Personalizado</option>
+                <option>Coloração & Mechas</option>
+                <option>Terapia Capilar</option>
+                <option>Tratamento  Capilar</option>
+                <option>Consulta / Anamnese</option>
+              </select>
+              <textarea placeholder="Descreva o que deseja / histórico capilar (opcional)" id="obs" rows="4"></textarea>
+              <button class="btn primary" type="submit">Enviar solicitação de anamnese</button>
+            </form>
+            <div style="font-size:13px;color:#9f968c;margin-top:10px">Resposta em até 24h via WhatsApp.</div>
+          </div>
+
+          <div style="height:18px"></div>
+
+        </aside>
+      </div>
+
+      <section class="about fade" id="sobre" style="margin-top:28px">
+        <h2>Claudia Oliveira</h2>
+        <p>Entrei no mundo da beleza por necessidade e, desde então, já se passaram 16 anos dedicados à transformação e ao cuidado com cada cliente. Há 5 anos senti o despertar para evoluir ainda mais: busquei cursos, especializações e todo o conhecimento que me desse autoridade para me tornar uma exelente profissional. Desde então, venho construindo minha própria metodologia de atendimento, baseado em técnica, sensibilidade e resultado.</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/claudiaoliveiraterapeutacapila/" target="_blank">
+          <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/Claudiaoliveira2016/" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="https://wa.me/5513988120985?text=Olá, gostaria de agendar um horário!." target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </section>
+
+      <section class="about fade" id="sobre" style="margin-top:28px">
+      <h2 id="mapa">Localização</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d116631.41800256204!2d-46.4133357!3d-24.0052457!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030908b1f30d%3A0x3fdc089686aed81!2sClaudia%20Oliveira%20%7C%20cabelereira%20%7C%20terapeuta%20capilar%20%7C%20tricologista%20capilar!5e0!3m2!1sen!2sbr!4v1765554839241!5m2!1sen!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+         referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      </section>
+      
+     <footer>
+       <p>© 2026 • Claudia Oliveira Hair</p>
+    </footer>
+
+    </main>
+  </div>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999">
+    <img id="lightboxImg" src="" alt="" style="max-width:95%;max-height:85%;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.6)">
+  </div>
+
+<script>
+
+// Dados dos serviços (modal)
+const serviceInfo = {
+  'Corte Personalizado':
+    'Um corte pensado para o seu formato de rosto, estilo de vida e textura dos fios. Inclui diagnóstico e finalização.',
+
+  'Coloração & Mechas':
+    'Especializada em mechas sem danos, correção de cor, luzes e tonalizações personalizadas.',
+
+  'Terapia Capilar':
+    'Tratamentos profissionais para fortalecer, hidratar, remover toxinas e revitalizar o couro cabeludo.',
+
+  'Acabamento & Escova':
+    'Escovas modeladas, finalizações polidas e técnicas que valorizam o movimento natural dos cabelos.'
+};
+
+// Abrir modal de serviço
+function openService(key) {
+  const title = key;
+  const desc = serviceInfo[key] || '';
+
+  // Criar modal
+  const modal = document.createElement('div');
+  modal.id = 'serviceModalDynamic';
+
+  modal.style.cssText = `
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .75);
+    display: grid;
+    place-items: center;
+    z-index: 10000;
+    padding: 20px;
+  `;
+
+  modal.innerHTML = `
+    <div id="overlay" style="
+        position:fixed;
+        inset:0;
+        background:rgba(0,0,0,0.65);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        animation:fadeIn .3s ease;
+      ">
+      
+      <div id="modalBox" style="
+          background:#0b0b0b;
+          padding:24px;
+          border-radius:14px;
+          max-width:520px;
+          width:92%;
+          color:#d6d6d6;
+          animation:scaleIn .25s ease;
+        ">
+          <h3 style="margin-top:0;color:var(--gold)">${title}</h3>
+          <p style="line-height:1.5;color:#cfc7bf">${desc}</p>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  // ⭐ Agora sim o overlay existe, então podemos adicionar o evento
+  document.getElementById("overlay").onclick = function (e) {
+    if (e.target.id === "overlay") {
+      closeServiceModal();
+    }
+  };
+}
+
+function closeServiceModal() {
+  const m = document.getElementById('serviceModalDynamic');
+  if (m) m.remove();
+}
+
+
+// Abrir vídeo em nova aba
+
+function openVideo(url) {
+  window.open(url, '_blank');
+}
+
+
+// Envio do formulário de anamnese
+function submitAnamnese(e) {
+  e.preventDefault();
+
+  const nome = document.getElementById('nome').value.trim();
+  const whatsapp = document.getElementById('whatsapp').value.trim();
+
+  if (!nome || !whatsapp) {
+    alert('Preencha nome e WhatsApp');
+    return false;
+  }
+
+  alert('Pedido de anamnese enviado! Entraremos em contato pelo WhatsApp.');
+  e.target.reset();
+
+  return false;
+}
+</script>
+
+</body>
+</html>
