@@ -24,7 +24,7 @@
 
 html, body {
   height: 100%;
-  margin: 0;
+
   font-family: Montserrat, system-ui, Arial;
   color: var(--muted);
   background: var(--bg);
@@ -43,17 +43,49 @@ a {
 
 /* HEADER */
 header {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  align-items: center;
+  padding: 15px 20px;
+  
+  z-index: 10000;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
 }
+
+/* Card do menu */
+.menu-card {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #100f0f;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 15px;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 9999;
+}
+
+
+.menu-card a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.menu-card a:hover {
+  background: #91919165;
+}
+
 
 .logo {
   width: 56px;
@@ -70,19 +102,6 @@ header {
   font-family: 'Playfair Display', serif;
   margin: 0;
   font-size: 18px;
-}
-
-nav {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-nav a {
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 14px;
 }
 
 .cta {
@@ -215,32 +234,35 @@ nav a {
 
 /* SERVICES */
 .services {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
 }
 
-@media (max-width: 600px) {
-  .services {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:600px){
+  .services{grid-template-columns:1fr;}
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
 }
 
-.card h3 {
-  margin: 8px 0;
+.card-img {
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  height: 220px;
 }
 
-.card p {
-  margin: 0;
-  color: #bfb9aa;
+.card-body {
+  padding:16px;
 }
+
+.card h3 { margin:8px 0; }
+.card p { margin:0;color:#bfb9aa; }
 
 /* TREATMENTS */
 .treatments ul {
@@ -423,26 +445,43 @@ footer {
     height: 160px;
   }
 }
+</style>
 
-
-  </style>
 </head>
+
 <body>
+  <div>
+<!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11293315284"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11293315284');
+      </script>
+</div>
+
   <div class="container">
     <header class="fade">
       <div class="brand">
         <div class="logo">A</div>
         <div>
           <h1>Claudia Oliveira</h1>
-          
         </div>
       </div>
-      <nav>
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#galeria">Galeria</a>
-       <!-- <a class="cta" href="#anamnese">Agendar Anamnese</a> -->
-      </nav>
+
+    
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <!-- Card do menu -->
+      <div class="menu-card" id="menuCard">
+        <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+        <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+        <a href="#mapa" onclick="toggleMenu()">Localização</a>
+      </div>
+    
+    
     </header>
 
     <main>
@@ -455,12 +494,13 @@ footer {
             <!--<button class="btn primary" onclick="document.getElementById('anamnese').scrollIntoView({behavior:'smooth'})">Agendar Anamnese</button>
             <button class="btn" onclick="document.getElementById('galeria').scrollIntoView({behavior:'smooth'})">Ver Galeria</button> -->
             <button class="btn primary">
-              <a href="#mapa">Localização</a>
+               <a href="https://wa.me/5513988120985?text=Olá, gostaria de agendar um horário!." target="_blank">Agendar Anamnese</a>
             </button>
           </div>
           <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
-            <!-- <div class="chip">Local: Centro</div> -->
-            <div style="margin-left:auto;color:#a9a29a">Aberto: Seg–Sex • 9h–18h</div>
+            <div class="chip">Tel.: (13)988120985</div>
+            <div style="margin-left:auto;color:#a9a29a">Aberto: Seg–Sex • 10h–19h</div>
+            
           </div>
         </div>
 
@@ -477,30 +517,53 @@ footer {
       <div class="grid">
         <div>
           <section class="fade" id="servicos">
-            <h2>Aqui você encontrará:</h2>
+            <h2>Catálago de atendimentos:</h2>
             <div class="highlights">
-              <div class="chip">Atendimento humanizado</div>
-              <div class="chip">Especialização e metodologia própria</div>
+              <div class="chip" onclick="openService('Atendimento humanizado')">Atendimento humanizado</div>
+              <div class="chip" onclick="openService('Especialização e metodologia própria')">Especialização e metodologia própria</div>
+              
             </div>
+            
           </section>
 
-          <section class="fade services"  style="margin-top:18px">
+          <section class="fade services" style="margin-top:18px">
+
             <div class="card" onclick="openService('Corte Personalizado')">
-              <h3>Corte Personalizado</h3>
-              <p>Técnica que valoriza o formato e estilo.</p>
+              <img src="IMG/mechas.jpeg" class="card-img">
+              <div class="card-body">
+                <h3>Corte Personalizado</h3>
+                <p>Técnica que valoriza formato e estilo.</p>
+              </div>
             </div>
+
             <div class="card" onclick="openService('Coloração & Mechas')">
-              <h3>Coloração & Mechas</h3>
-              <p>Mechas seguras, correções e tonalizações personalizadas.</p>
+              <img src="IMG/loiro.png" class="card-img">
+              <div class="card-body">
+                <h3>Coloração & Mechas</h3>
+                <p>Mechas seguras e correções de cor.</p>
+              </div>
             </div>
+
             <div class="card" onclick="openService('Terapia Capilar')">
-              <h3>Terapia Capilar</h3>
-              <p>Tratamentos, protocolos de reconstrução, hidratação e fortalecimento.</p>
+              <img src="IMG/tratamento.jpeg" class="card-img">
+              <div class="card-body">
+                <h3>Terapia Capilar</h3>
+                <p>Tratamentos para couro cabeludo.</p>
+              </div>
             </div>
-            <div class="card" onclick="openService('Acabamento & Escova')">
-              <h3>Alinhamentos Térmico & Escova</h3>
-              <p>Finalizações que realçam o corte e preservam a saúde dos fios.</p>
+
+            <div class="card" onclick="openService('Alinhamento & Escova')">
+              <img src="IMG/alinhamento.png" class="card-img">
+              <div class="card-body">
+                <h3>Alinhamento & Escova</h3>
+                <p>Finalizações com saúde dos fios.</p>
+              </div>
             </div>
+
+            <button class="btn" onclick="window.open('https://www.instagram.com/claudiaoliveiraterapeutacapila/', '_blank')">
+               Confira outros atendimentos
+             </button>
+
           </section>
 
           <section class="fade treatments" style="margin-top:18px">
@@ -513,37 +576,6 @@ footer {
             </ul>
           </section>
 
-          <section class="fade" id="galeria" style="margin-top:18px">
-            <h2>Atendimento</h2>
-            <div class="gallery">
-              <img src="IMG/loiro.png" alt="Mechas Loira">
-              <img src="IMG/alinhamento.png" alt="Alinhamento Térmico">
-              <img src="IMG/tratamento.jpeg" alt="Tratamento">
-            </div>
-            <div style="margin-top:12px">
-             <button class="btn" onclick="window.open('https://www.instagram.com/claudiaoliveiraterapeutacapila/', '_blank')">
-               Confira outros atendimentos
-             </button>
-            </div>
-
-<script>
-function openImageModal(src) {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImg');
-
-  modalImg.src = src;
-  modal.style.display = 'grid';
-}
-
-// Fechar ao clicar fora
-function closeImageModal(e) {
-  if (e.target.id === "imageModal") {
-    document.getElementById('imageModal').style.display = 'none';
-  }
-}
-</script>
-
-          </section>
 
           <section class="fade courses" style="margin-top:18px">
             <h2>Cursos</h2>
@@ -552,6 +584,7 @@ function closeImageModal(e) {
           </section>
         </div>
 
+        <!--
         <aside>
           <div class="anamnese fade" id="anamnese">
             <h4>Agendar Anamnese</h4>
@@ -576,11 +609,13 @@ function closeImageModal(e) {
           <div style="height:18px"></div>
 
         </aside>
+        -->
       </div>
 
       <section class="about fade" id="sobre" style="margin-top:28px">
         <h2>Claudia Oliveira</h2>
         <p>Entrei no mundo da beleza por necessidade e, desde então, já se passaram 16 anos dedicados à transformação e ao cuidado com cada cliente. Há 5 anos senti o despertar para evoluir ainda mais: busquei cursos, especializações e todo o conhecimento que me desse autoridade para me tornar uma exelente profissional. Desde então, venho construindo minha própria metodologia de atendimento, baseado em técnica, sensibilidade e resultado.</p>
+        <h2>Nos siga nas redes sociais !</h2>
         <div class="social-icons">
           <a href="https://www.instagram.com/claudiaoliveiraterapeutacapila/" target="_blank">
           <i class="fab fa-instagram"></i>
@@ -621,9 +656,23 @@ function closeImageModal(e) {
   </div>
 
 <script>
+  
+function toggleMenu() {
+    const menu = document.getElementById("menuCard");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+
+  
 
 // Dados dos serviços (modal)
 const serviceInfo = {
+  'Atendimento humanizado':
+  'Atendimento individual, com escuta ativa e foco no bem-estar.',
+
+  'Especialização e metodologia própria':
+  'Especializações e técnicas desenvolvida com base em estudo e experiência profissional.',
+
   'Corte Personalizado':
     'Um corte pensado para o seu formato de rosto, estilo de vida e textura dos fios. Inclui diagnóstico e finalização.',
 
@@ -633,9 +682,10 @@ const serviceInfo = {
   'Terapia Capilar':
     'Tratamentos profissionais para fortalecer, hidratar, remover toxinas e revitalizar o couro cabeludo.',
 
-  'Acabamento & Escova':
+  'Alinhamento & Escova':
     'Escovas modeladas, finalizações polidas e técnicas que valorizam o movimento natural dos cabelos.'
 };
+
 
 // Abrir modal de serviço
 function openService(key) {
@@ -671,7 +721,7 @@ function openService(key) {
           background:#0b0b0b;
           padding:24px;
           border-radius:14px;
-          max-width:520px;
+          max-width:70vw;
           width:92%;
           color:#d6d6d6;
           animation:scaleIn .25s ease;
@@ -684,7 +734,7 @@ function openService(key) {
 
   document.body.appendChild(modal);
 
-  // ⭐ Agora sim o overlay existe, então podemos adicionar o evento
+
   document.getElementById("overlay").onclick = function (e) {
     if (e.target.id === "overlay") {
       closeServiceModal();
