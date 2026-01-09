@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Claudia Oliveira Hair</title>
+  <link rel="icon" href="IMG/logo.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -98,11 +99,21 @@ header {
   font-weight: 800;
 }
 
-.brand h1 {
-  font-family: 'Playfair Display', serif;
-  margin: 0;
-  font-size: 18px;
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
 }
+
+.brand img {
+  width: 80px;   /* menor */
+  height: auto;
+  object-fit: contain;
+}
+
+
+
 
 .cta {
   background: var(--gold);
@@ -159,7 +170,7 @@ header {
 
 .btn {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid rgb(205 29 29 / 77%);
   padding: 12px 16px;
   border-radius: 12px;
   color: var(--muted);
@@ -344,7 +355,7 @@ header {
 .course {
   padding: 12px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.02);
+  background:rgb(125 9 9 / 37%);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -477,10 +488,7 @@ footer {
   <div class="container">
     <header class="fade">
       <div class="brand">
-        <div class="logo">A</div>
-        <div>
-          <h1>Claudia Oliveira</h1>
-        </div>
+        <img src="IMG/logo.png" alt="Claudia Oliveira">
       </div>
 
     
@@ -512,7 +520,7 @@ footer {
           </div>
           <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
            
-            <div style="margin-left:auto;color:#a9a29a">Aberto: Seg–Sex • 10h–19h</div>
+            <div style="margin-left:auto;color:#c11919">Aberto: Seg–Sáb • 9h–20h</div>
             
           </div>
         </div>
