@@ -201,19 +201,30 @@ header {
   margin-bottom: 8px;
 }
 
-/* GRID */
+
+/* GRID PRINCIPAL */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
   margin-top: 28px;
 }
 
+/* MOBILE */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .right-col {
+    order: 2;
+  }
+
+  .left-col {
+    order: 1;
+  }
 }
+
 
 /* HIGHLIGHTS */
 .highlights {
@@ -342,8 +353,10 @@ header {
 /* ABOUT */
 .about {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
-  padding: 20px;
   border-radius: 12px;
+  max-width: 1100px;        /* deixa menor */
+  margin: 40px auto;       /* centraliza e afasta das bordas */
+  padding: 24px 28px;   
 }
 
 .about p {
@@ -515,74 +528,82 @@ footer {
       </section>
 
       <div class="grid">
-        <div>
-          <section class="fade" id="servicos">
-            <h2>Catálago de atendimentos:</h2>
-            <div class="highlights">
-              <div class="chip" onclick="openService('Atendimento humanizado')">Atendimento humanizado</div>
-              <div class="chip" onclick="openService('Especialização e metodologia própria')">Especialização e metodologia própria</div>
-              
-            </div>
-            
-          </section>
 
-          <section class="fade services" style="margin-top:18px">
+  <!-- COLUNA ESQUERDA -->
+  <div class="left-col">
 
-            <div class="card" onclick="openService('Corte Personalizado')">
-              <img src="IMG/mechas.jpeg" class="card-img">
-              <div class="card-body">
-                <h3>Corte Personalizado</h3>
-                <p>Técnica que valoriza formato e estilo.</p>
-              </div>
-            </div>
+    <section class="fade" id="servicos">
+      <h2>Catálago de atendimentos:</h2>
+      <div class="highlights">
+        <div class="chip" onclick="openService('Atendimento humanizado')">Atendimento humanizado</div>
+        <div class="chip" onclick="openService('Especialização e metodologia própria')">Especialização e metodologia própria</div>
+      </div>
+    </section>
 
-            <div class="card" onclick="openService('Coloração & Mechas')">
-              <img src="IMG/loiro.png" class="card-img">
-              <div class="card-body">
-                <h3>Coloração & Mechas</h3>
-                <p>Mechas seguras e correções de cor.</p>
-              </div>
-            </div>
+    <section class="fade services" style="margin-top:18px">
 
-            <div class="card" onclick="openService('Terapia Capilar')">
-              <img src="IMG/tratamento.jpeg" class="card-img">
-              <div class="card-body">
-                <h3>Terapia Capilar</h3>
-                <p>Tratamentos para couro cabeludo.</p>
-              </div>
-            </div>
-
-            <div class="card" onclick="openService('Alinhamento & Escova')">
-              <img src="IMG/alinhamento.png" class="card-img">
-              <div class="card-body">
-                <h3>Alinhamento & Escova</h3>
-                <p>Finalizações com saúde dos fios.</p>
-              </div>
-            </div>
-
-            <button class="btn" onclick="window.open('https://www.instagram.com/claudiaoliveiraterapeutacapila/', '_blank')">
-               Confira outros atendimentos
-             </button>
-
-          </section>
-
-          <section class="fade treatments" style="margin-top:18px">
-            <h2>Tratamentos</h2>
-            <ul>
-              <li>Alopecia</li>
-              <li>Oleosidade</li>
-              <li>Dermatite</li>
-              <li>Psoríase</li>
-            </ul>
-          </section>
-
-
-          <section class="fade courses" style="margin-top:18px">
-            <h2>Cursos</h2>
-            <div class="course">Curso: Terapias capilares iniciante <span style="opacity:.8"> <!--• 8h --></span></div>
-            <div class="course">Curso: Terapias capilares avançado<span style="opacity:.8"><!--• 8h --></span></div>
-          </section>
+      <div class="card" onclick="openService('Corte Personalizado')">
+        <img src="IMG/mechas.jpeg" class="card-img">
+        <div class="card-body">
+          <h3>Corte Personalizado</h3>
+          <p>Técnica que valoriza formato e estilo.</p>
         </div>
+      </div>
+
+      <div class="card" onclick="openService('Coloração & Mechas')">
+        <img src="IMG/loiro.png" class="card-img">
+        <div class="card-body">
+          <h3>Coloração & Mechas</h3>
+          <p>Mechas seguras e correções de cor.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="openService('Terapia Capilar')">
+        <img src="IMG/tratamento.jpeg" class="card-img">
+        <div class="card-body">
+          <h3>Terapia Capilar</h3>
+          <p>Tratamentos para couro cabeludo.</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="openService('Alinhamento & Escova')">
+        <img src="IMG/alinhamento.png" class="card-img">
+        <div class="card-body">
+          <h3>Alinhamento & Escova</h3>
+          <p>Finalizações com saúde dos fios.</p>
+        </div>
+      </div>
+
+      <button class="btn" onclick="window.open('https://www.instagram.com/claudiaoliveiraterapeutacapila/', '_blank')">
+        Confira outros atendimentos
+      </button>
+
+    </section>
+  </div>
+
+  <!-- COLUNA DIREITA -->
+  <aside class="right-col">
+
+    <section class="fade treatments">
+      <h2>Tratamentos</h2>
+      <ul>
+        <li>Alopecia</li>
+        <li>Oleosidade</li>
+        <li>Dermatite</li>
+        <li>Psoríase</li>
+      </ul>
+    </section>
+
+    <section class="fade courses" style="margin-top:18px">
+      <h2>Cursos</h2>
+      <div class="course">Curso: Terapias capilares iniciante</div>
+      <div class="course">Curso: Terapias capilares avançado</div>
+    </section>
+
+  </aside>
+
+</div>
+
 
         <!--
         <aside>
