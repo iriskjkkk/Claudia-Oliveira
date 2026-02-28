@@ -53,6 +53,47 @@ header {
   z-index: 10000;
 }
 
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(28deg, #fbfbfb, #a8cfb7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float img {
+    width: 32px;
+    height: 32px;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* Animação suave de pulsar */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
 .menu-toggle {
   font-size: 28px;
   cursor: pointer;
@@ -671,6 +712,12 @@ footer {
         </iframe>
       </div>
       </section>
+
+      <a href="https://wa.me/5513988120985?text=Olá, gostaria de agendar um horário!." 
+        class="whatsapp-float" 
+        target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="35">
+      </a>
       
      <footer>
        <p>© 2026 • Claudia Oliveira Hair</p>
